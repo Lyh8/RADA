@@ -1,0 +1,6 @@
+scenario: simple_tag_v2
+num_good: 1
+num_adversaries: 6
+num_obstacles: 2
+max_cycles: 50
+continuous_actions: True

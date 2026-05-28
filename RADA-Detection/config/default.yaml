@@ -1,0 +1,93 @@
+runner: "episode"
+mac: "basic_mac"
+env: "sc2"
+env_args: {}
+batch_size_run: 1
+test_nepisode: 20
+test_interval: 2000
+test_greedy: True
+log_interval: 2000
+runner_log_interval: 2000
+learner_log_interval: 2000
+t_max: 0
+use_cuda: True
+buffer_cpu_only: True
+
+use_tensorboard: True
+save_model: True
+save_model_interval: 200000
+checkpoint_path: ""
+evaluate: False
+load_step: 0
+save_replay: False
+local_results_path: "results"
+
+gamma: 0.99
+batch_size: 32
+buffer_size: 5000
+lr: 0.0005
+optim_alpha: 0.99
+optim_eps: 0.00001
+grad_norm_clip: 10
+
+agent: "rnn"
+rnn_hidden_dim: 64
+hidden_dim: 128
+use_rnn: True
+obs_agent_id: True
+obs_last_action: True
+
+repeat_id: 1
+label: "default_label"
+
+use_recl: True
+use_tf: True
+use_shared_predictor: True
+tracker_train: False
+tracker_train_episodes: 100000
+tracker_hidden_dim: 128
+
+recl_lr: 0.0005
+tracker_lr: 0.0005
+recl_loss_weight: 0.1
+
+agent_embedding_dim: 64
+role_embedding_dim: 32
+cluster_num: 3
+multi_steps: 10
+role_tau: 0.01
+role_dev_threshold: 12.0
+
+attack_active: False
+attack_type: "DAA"
+attack_start_t: 0
+attack_max_start: 30
+adv_batch_size: 32
+adv_buffer_size: 2000
+adv_lambda: 0.025
+adv_test_mode: True
+adv_load_adr: ""
+
+tracker_buffer_size: 2000
+tracker_load_adr: ""
+tracker_window: [-1, 10]
+thresholds: [-3.0, -3.0]
+train_tracker_phase: False
+use_role_input: True
+use_stage1: True
+use_stage2: True
+
+defense_active: False
+defense_mode: "action_replace"
+
+detect_strategy: "same_role_only"
+detect_min_steps: 3
+
+vote_mode: "role_soft"
+w_same: 2.0
+w_diff: 1.0
+softmax_temperature: 1.0
+
+defense_delay: -1
+defense_calibrate: True
+save_detailed_stats: True
